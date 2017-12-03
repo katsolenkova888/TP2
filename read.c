@@ -16,12 +16,12 @@ void main(){
 	char buf[BUFFSIZE];
 
 	if (fd = open("fifo_x", O_RDONLY) < 0){
-		perror("open")
+		perror("open");
 	}
 
 	while(rres = read(fd, buf, BUFFSIZE) > 0) {
 
-		if (write(STDOUT_FILENO, buf, n) != n) { 
+		if (write(STDOUT_FILENO, buf, rres) != rres) { 
 			exit(1);
 		}
 	}
